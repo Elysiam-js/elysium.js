@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elysium App</title>
+    <script src="/htmx.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
+            background-color: #f9fafb;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="hero">
+            <h1>Welcome to Elysium</h1>
+            <p>A modern fullstack framework with HTMX and Elysia.js</p>
+        </section>
+
+        <div class="container">
+            <h2>Features</h2>
+            <ul>
+                <li>Built on Elysia.js</li>
+                <li>HTMX Integration</li>
+                <li>Component System</li>
+                <li>File-based Routing</li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>

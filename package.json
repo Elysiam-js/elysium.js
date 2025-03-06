@@ -1,20 +1,47 @@
 {
-  "name": "elysium",
+  "name": "elysium-js",
   "version": "0.1.0",
-  "description": "A modern fullstack web framework with HTMX and Elysia.js",
-  "main": "src/index.ts",
+  "description": "A modern fullstack framework combining HTMX and Elysia.js",
+  "main": "dist/index.js",
   "type": "module",
-  "scripts": {
-    "dev": "bun run --watch src/index.ts",
-    "build": "bun build src/index.ts",
-    "start": "bun run src/index.ts"
+  "bin": {
+    "elysium": "./dist/cli.js",
+    "elysium-js": "./dist/cli.js"
   },
+  "scripts": {
+    "dev": "bun run src/cli.ts dev",
+    "build": "bun run src/cli.ts build",
+    "start": "bun run src/cli.ts start",
+    "create": "bun run src/cli.ts create",
+    "tsc": "tsc"
+  },
+  "keywords": [
+    "htmx",
+    "elysia",
+    "framework",
+    "fullstack",
+    "bun"
+  ],
+  "author": "",
+  "license": "MIT",
   "dependencies": {
-    "elysia": "latest",
-    "htmx.org": "^1.9.10"
+    "chalk": "^5.3.0",
+    "chokidar": "^3.5.3",
+    "commander": "^11.1.0",
+    "elysia": "^0.7.30",
+    "fs-extra": "^11.1.1",
+    "glob": "^11.0.1",
+    "htmx.org": "^1.9.10",
+    "elysium": "file:./path/to/local/elysium"
   },
   "devDependencies": {
     "bun-types": "latest",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "@types/node": "^20.10.5",
+    "@types/fs-extra": "^11.0.4",
+    "@types/glob": "^8.1.0"
+  },
+  "engines": {
+    "bun": ">=1.0.0"
   }
 }
