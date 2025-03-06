@@ -1,0 +1,129 @@
+export Button = {
+  render: (props) => {
+    // Extract known props
+    const { 
+      size = 'medium',
+      color = 'primary',
+      disabled,
+      type = 'button',
+      onClick,
+      children,
+      ...otherProps
+    } = props;
+    
+    // Build class names
+    const classes = [
+      'els-button',
+      `els-button-${size}`,
+      `els-button-${color}`,
+      disabled ? 'els-button-disabled' : ''
+    ].filter(Boolean).join(' ');
+    
+    // Build attributes string
+    const attributes = Object.entries(otherProps)
+      .map(([key, value]) => `${key}="${value}"`)
+      .join(' ');
+    
+    // Handle disabled state
+    const disabledAttr = disabled ? 'disabled' : '';
+    
+    return `
+      <button 
+        class="${classes}" 
+        type="${type}" 
+        ${disabledAttr}
+        ${onClick ? `hx-post="${onClick}" hx-trigger="click"` : ''}
+        ${attributes}
+      >
+        ${children || 'Button'}
+      </button>
+    `;
+  },
+  styles: `
+    /* Base Button Styles */
+    .els-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      border: none;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    
+    /* Size Variants */
+    .els-button-small {
+      padding: 0.375rem 0.75rem;
+      font-size: 0.875rem;
+    }
+    
+    .els-button-medium {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+    }
+    
+    .els-button-large {
+      padding: 0.75rem 1.5rem;
+      font-size: 1.125rem;
+    }
+    
+    /* Color Variants */
+    .els-button-primary {
+      background-color: #3b82f6;
+      color: white;
+    }
+    
+    .els-button-primary:hover {
+      background-color: #2563eb;
+    }
+    
+    .els-button-secondary {
+      background-color: #6b7280;
+      color: white;
+    }
+    
+    .els-button-secondary:hover {
+      background-color: #4b5563;
+    }
+    
+    .els-button-success {
+      background-color: #10b981;
+      color: white;
+    }
+    
+    .els-button-success:hover {
+      background-color: #059669;
+    }
+    
+    .els-button-danger {
+      background-color: #ef4444;
+      color: white;
+    }
+    
+    .els-button-danger:hover {
+      background-color: #dc2626;
+    }
+    
+    .els-button-outline {
+      background-color: transparent;
+      color: #3b82f6;
+      border: 1px solid #3b82f6;
+    }
+    
+    .els-button-outline:hover {
+      background-color: rgba(59, 130, 246, 0.1);
+    }
+    
+    /* Disabled State */
+    .els-button-disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    
+    .els-button-disabled:hover {
+      opacity: 0.6;
+    }
+  `
+}

@@ -1,0 +1,11 @@
+# Bun configuration file
+
+# This file is used to configure Bun for your project.
+
+# Specify the entry point of your application
+entry = "src/index.ts"
+
+# Specify the output directory
+output = "dist"
+
+# Add any additional configurations as needed

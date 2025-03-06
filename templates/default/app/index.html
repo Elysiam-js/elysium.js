@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PROJECT_NAME}} - Elysium App</title>
+    <script src="/public/htmx.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
+            background-color: #f9fafb;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #f1f1f1;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <Header title="{{PROJECT_NAME}}" links='[{"text":"Home","href":"/"},{"text":"Components","href":"#components"},{"text":"Docs","href":"/docs"},{"text":"GitHub","href":"https://github.com"}]'></Header>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to {{PROJECT_NAME}}</h1>
+            <p>A modern fullstack framework with HTMX and Elysia.js</p>
+            <div class="cta">
+                <Button size="large" color="primary">Get Started</Button>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Features</h2>
+            <Card title="Dynamic Components" shadow="medium">
+                <p>Create reusable components with a simple export syntax. Components support props and children.</p>
+                <Button color="primary">Learn More</Button>
+            </Card>
+            <Card title="HTMX Integration" shadow="medium">
+                <p>Seamless integration with HTMX for dynamic content without writing JavaScript.</p>
+                <Button color="primary">Learn More</Button>
+            </Card>
+            <Card title="App Router" shadow="medium">
+                <p>File-based routing for both pages and API endpoints, similar to Next.js.</p>
+                <Button color="primary">Learn More</Button>
+            </Card>
+        </section>
+    </main>
+
+    <footer>
+        <p>Documentation: <a href="/docs">Visit our documentation</a></p>
+        <p>Source Code: <a href="https://github.com">GitHub Repository</a></p>
+    </footer>
+</body>
+</html>

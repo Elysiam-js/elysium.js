@@ -1,0 +1,12 @@
+# Node modules
+node_modules/
+
+# Bun output
+/dist/
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
